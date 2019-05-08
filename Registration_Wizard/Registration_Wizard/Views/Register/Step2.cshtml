@@ -1,0 +1,118 @@
+﻿@model Registration_Wizard.Models.User
+@{
+    ViewBag.Title = "Registration";
+    TempData["myModel"] = Model;
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/step2.css" />
+</head>
+
+<body>
+    <div class="registration-step2">
+        <div class="step2-header">
+            <h1 class="step2-label">New User Registration</h1>
+            <h2 class="step2-step">Step 2.</h2>
+        </div>
+        @using (Html.BeginForm("Step2", "Register", FormMethod.Post, new { id = "regform" }))
+        {
+            <div class="step2-form-container">
+                <div class="step2-form">
+                    <table class="form-table">
+                        <tr>
+                            <td class="form-unit">
+                                <span class="unit-label">
+                                    <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
+                                    Business Areas
+                                </span>
+                            </td>
+                            <td class="form-unit">
+                                <span class="unit-label">
+                                    <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
+                                    Comments
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-unit">
+                                <table class="check">
+                                    <tr>
+                                        <td>
+                                            <input type="hidden" name="spam" id="spam" />
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.FinanceRemit, new { @class = "check", Value = true }) Finance - remit subscribers <br />
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.EngineerAll, new { @class = "check", Value = true }) Engineer - all<Br>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.EngineerLaunch, new { @class = "check", Value = true }) Engineer - launch<Br>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.EngineerTrip, new { @class = "check", Value = true }) Engineer - trip<Br>
+                                            </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label>
+                                                @Html.CheckBoxFor(m => m.EngineerRead, new { @class = "check", Value = true }) Engineer - read only<Br>
+                                            </label>
+                                            <br />
+                                        </td>
+                                    </tr>
+                                </table>
+
+                            </td>
+
+                            <td class="form-unit">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            @Html.TextAreaFor(m => m.Comment, new { @class = "comment", placeholder = "Example:\nShowtime\nCBS Sports\nCBS TV Stations" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span style="text-transform:uppercase; font-size:10px;">Let us know for which network you are requesting access, and any other comments you'd like to leave us</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                    <p id="mes" style="color:red;display:none">Check at least one option</p>
+                </div>
+            </div>
+            <div class="step2-buttons">
+                <a class="to-login" href="#">Back to Login Page</a>
+                <button type="submit" class="btn btn-danger btn-lg active " id="next" role="button" aria-pressed="true">Next</button>
+                <a href="/Register/Index" class="btn btn-primary btn-lg active " id="back" role="button" aria-pressed="true">Back</a>
+            </div>
+        }
+            <div class="footer">
+                CORAL MULTI-SIDED PLATFORM DEV+ Internal
+            </div>
+        </div>
+</body>
+
+@section Scripts{
+    <script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery-validate.bootstrap-tooltip.js"></script>
+    <script src="~/Scripts/custom-step2-validation.js"></script>
+}

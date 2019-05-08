@@ -1,0 +1,172 @@
+﻿@model Registration_Wizard.Models.User
+@using CaptchaMvc.HtmlHelpers
+@{
+    ViewBag.Title = "Registration";
+    TempData["myModel"] = Model;
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/step4.css" />
+    <script src="~/Scripts/countries.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+    <div class="registration-step4">
+        <div class="step4-header">
+            <h1 class="step4-label">New User Registration</h1>
+            <h2 class="step4-step">Step 4.</h2>
+            <h2 class="step4-password">Password</h2>
+        </div>
+        @using (Html.BeginForm("Step4", "Register", FormMethod.Post, new { id = "regform" }))
+        {
+            <div class="step4-form-container">
+                <div class="instructions">
+                    <div>
+                        Instructions:
+                        <span class="glyphicon glyphicon-exclamation-sign" style="color:red"></span>
+                    </div>
+                    <div class="pas-instruction" style="color:gray">
+                        <p>
+                            Password must include:<br> - at least 8 characters<br> - an UPPER case letter<br> - a lower case letter<br> - a number <br>
+                        </p>
+                    </div>
+                    <div class="pas-instruction" style="margin-top:20px">
+                        <p>
+                            Review the <br>
+                            <a href="#"> Terms of Use </a> and <br><a href="#"> Privacy Policy </a> and indicate that you have read and accepted these terms.
+                        </p>
+                    </div>
+                </div>
+                <div class="pass-form">
+                    <table class="pass-table">
+                        <tr>
+                            <td class="form-unit">
+                                <table class="form-field">
+                                    <tr>
+                                        <td class="field-label">
+                                            <span>
+                                                <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
+                                                <span>Password:</span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="field-with-icon">
+                                                <table>
+                                                    <tr>
+                                                        <td class="field">
+                                                            @Html.PasswordFor(m => m.Password)
+                                                        </td>
+                                                        <td class="icon">
+                                                            <span id="Password" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none"></span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-unit">
+                                <table class="form-field">
+                                    <tr>
+                                        <td class="field-label">
+                                            <span>
+                                                <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
+                                                <span>Confirm password:</span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="field-with-icon">
+                                                <table>
+                                                    <tr>
+                                                        <td class="field">
+                                                            @Html.Password("ConfirmPassword")
+                                                        </td>
+                                                        <td class="icon">
+                                                            <span id="ConfirmPassword" class="glyphicon glyphicon-exclamation-sign" style="color:red;display:none"></span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-unit">
+                                <table class="form-field">
+                                    <tr>
+                                        <td class="field-label">
+                                            <span>
+                                                <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
+                                                <span>Captcha:</span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="field-with-icon">
+                                                <table>
+                                                    <tr>
+                                                        <td class="field">
+                                                            @Html.Captcha("Try another", "", 5, "Is required field", true)
+                                                            <p class="Error">@ViewBag.ErrMessage</p>
+                                                        </td>
+                                                        <td class="icon">
+                                                            <span class="glyphicon glyphicon-exclamation-sign" style="color:red; padding-top:130px; display: none"></span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-unit">
+                                <table class="form-field">
+                                    <tr>
+                                        <td class="field-label"></td>
+                                        <td>
+                                            <div class="field-with-icon">
+                                                <table>
+                                                    <tr>
+                                                        <td class="field" id="check">
+                                                            <input type="checkbox" name="Accept" id="accept" value="3"> 	I have read and accept the terms of use<Br>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="step4-buttons">
+                <a class="to-login" href="#">Back to Login Page</a>
+                <button type="submit" class="btn btn-danger btn-lg active " id="next" role="button" aria-pressed="true">Submit</button>
+                <a href="/Register/Step3" class="btn btn-primary btn-lg active " id="back" role="button" aria-pressed="true">Back</a>
+            </div>
+        }
+        <div class="footer">
+            CORAL MULTI-SIDED PLATFORM DEV+ Internal
+        </div>
+    </div>
+</body>
+
+@section Scripts{
+    <script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery-validate.bootstrap-tooltip.js"></script>
+    <script src="~/Scripts/additional-methods.js"></script>
+    <script src="~/Scripts/custom-step4-validation.js"></script>
+}
+

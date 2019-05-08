@@ -1,0 +1,218 @@
+﻿@model Registration_Wizard.Models.User
+@{
+    ViewBag.Title = "Registration";
+    TempData["myModel"] = Model;
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/Content/step3.css" />
+    <script src="~/Scripts/countries.js"></script>
+</head>
+
+<body>
+
+    <div class="registration-step3">
+        <div class="step3-header">
+            <h1 class="step3-label">New User Registration</h1>
+            <h2 class="step3-step">Step 3.</h2>
+            <h2 class="step3-address">Address</h2>
+        </div>
+        @using (Html.BeginForm("Step3", "Register", FormMethod.Post, new { id = "regform" }))
+        {
+            <div class="step3-form-container">
+                <div class="step3-form">
+                    <table class="form-table">
+                        <tr>
+                            <td class="form-unit">
+                                <table class="form-field">
+                                    <tr>
+                                        <td class="field-label">
+                                            <span>
+                                                <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
+                                                <span>Country:</span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="field-with-icon">
+                                                <table>
+                                                    <tr>
+                                                        <td class="field">
+                                                            @Html.DropDownListFor(m => m.Country, new SelectList(""), new { @class = "country", @id = "country", Name = "country" })
+                                                        </td>
+                                                        <td class="icon">
+                                                            <span id="country" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none"></span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-unit">
+                                <table class="form-field">
+                                    <tr>
+                                        <td class="field-label">
+                                            <span>
+                                                <span>Office name:</span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="field-with-icon">
+                                                <table>
+                                                    <tr>
+                                                        <td class="field">
+                                                            @Html.TextBoxFor(m => m.OfficeName)
+                                                        </td>
+                                                        <td class="icon"></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-unit">
+                                <table class="form-field">
+                                    <tr>
+                                        <td class="field-label">
+                                            <span>
+                                                <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
+                                                <span>Address:</span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="field-with-icon">
+                                                <table>
+                                                    <tr>
+                                                        <td class="field">
+                                                            @Html.TextAreaFor(m => m.Address)
+                                                        </td>
+                                                        <td class="icon">
+                                                            <span id="Address" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none"></span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-unit">
+                                <table class="form-field">
+                                    <tr>
+                                        <td class="field-label">
+                                            <span>
+                                                <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
+                                                <span>Postal code:</span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="field-with-icon">
+                                                <table>
+                                                    <tr>
+                                                        <td class="field">
+                                                            @Html.TextBoxFor(m => m.PostalCode)
+                                                        </td>
+                                                        <td class="icon">
+                                                            <span id="PostalCode" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none"></span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-unit">
+                                <table class="form-field">
+                                    <tr>
+                                        <td class="field-label">
+                                            <span>
+                                                <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
+                                                <span>City:</span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="field-with-icon">
+                                                <table>
+                                                    <tr>
+                                                        <td class="field">
+                                                            @Html.TextBoxFor(m => m.City)
+                                                        </td>
+                                                        <td class="icon">
+                                                            <span id="City" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none"></span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="form-unit">
+                                <table class="form-field">
+                                    <tr>
+                                        <td class="field-label">
+                                            <span>
+                                                <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
+                                                <span>State:</span>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <div class="field-with-icon">
+                                                <table>
+                                                    <tr>
+                                                        <td class="field">
+                                                            @Html.DropDownListFor(m => m.State, new SelectList(""), new { @class = "state", @id = "state", Name = "state" })
+                                                        </td>
+                                                        <td class="icon">
+                                                            <span id="state" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none"></span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="step3-buttons">
+                <a class="to-login" href="#">Back to Login Page</a>
+                <button type="submit" class="btn btn-danger btn-lg active " id="next" role="button" aria-pressed="true">Next</button>
+                <a href="/Register/Step2" class="btn btn-primary btn-lg active " id="back" role="button" aria-pressed="true">Back</a>
+            </div>
+        }
+        <div class="footer">
+            CORAL MULTI-SIDED PLATFORM DEV+ Internal
+        </div>
+    </div>
+
+</body>
+
+
+@section Scripts{
+    <script>
+        populateCountries("country", "state");
+    </script>
+    <script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/jquery-validate.bootstrap-tooltip.js"></script>
+    <script src="~/Scripts/custom-step3-validation.js"></script>
+}

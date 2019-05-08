@@ -1,0 +1,36 @@
+﻿body {
+}
+
+.fin-container {
+    width: 900px;
+    height: 100vh;
+    margin: 0 auto 0;
+    position: relative;
+}
+
+.header{
+    position:absolute;
+    top: 50px;
+}
+
+.message {
+    position: absolute;
+    top: 140px;
+}
+
+.final-button {
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+    right: 0;
+    height: 45px;
+    width: 820px;
+    text-transform: uppercase;
+}
+
+.footer {
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+}
