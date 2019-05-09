@@ -22,13 +22,13 @@
                     <table class="form-table">
                         <tr>
                             <td class="form-unit">
-                                <span class="unit-label">
+                                <span class="unit-label lab">
                                     <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
                                     Business Areas
                                 </span>
                             </td>
                             <td class="form-unit">
-                                <span class="unit-label">
+                                <span class="unit-label lab">
                                     <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
                                     Comments
                                 </span>
@@ -82,19 +82,19 @@
                                 <table>
                                     <tr>
                                         <td>
-                                            @Html.TextAreaFor(m => m.Comment, new { @class = "comment", placeholder = "Example:\nShowtime\nCBS Sports\nCBS TV Stations" })
+                                            @Html.TextAreaFor(m => m.Comment, new { @class = "comment orange-tooltip", placeholder = "Example:\nShowtime\nCBS Sports\nCBS TV Stations", data_placement = "top" })
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <span style="text-transform:uppercase; font-size:10px;">Let us know for which network you are requesting access, and any other comments you'd like to leave us</span>
+                                            <span style="text-transform:uppercase; font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:10px;">Let us know for which network you are requesting access, and any other comments you'd like to leave us</span>
                                         </td>
                                     </tr>
                                 </table>
                             </td>
                         </tr>
                     </table>
-                    <p id="mes" style="color:red;display:none">Check at least one option</p>
+                    <p id="mes"  style="color:red;display:none">Check at least one option</p>
                 </div>
             </div>
             <div class="step2-buttons">

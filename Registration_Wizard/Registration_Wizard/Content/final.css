@@ -1,4 +1,10 @@
-﻿body {
+﻿@font-face {
+    font-family: 'Varela';
+    src: url('Fonts/VarelaRound-Regular.otf');
+}
+
+body {
+    font-family: Varela;
 }
 
 .fin-container {

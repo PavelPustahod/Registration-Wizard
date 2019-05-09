@@ -1,5 +1,26 @@
-﻿body{
+﻿@font-face {
+    font-family: 'Varela';
+    src: url('Fonts/VarelaRound-Regular.otf');
+}
+
+body {
+    font-family: Varela;
     font-size: 13px;
+}
+
+.lab {
+    color: #666;
+}
+
+.orange-tooltip + .tooltip > .tooltip-inner {
+    background-color: #f2ae10;
+ 
+    min-width: 120px;
+  
+}
+
+.orange-tooltip + .tooltip > .tooltip-arrow {
+    border-top-color: #f2ae10;
 }
 
 .registration-step2 {
@@ -96,4 +117,13 @@ textarea{
     position: absolute;
     bottom: 10px;
     right: 0;
+}
+
+label{
+    font-weight: normal;
+}
+
+.glyphicon-exclamation-sign {
+    cursor: help;
+    color: #FC6423;
 }

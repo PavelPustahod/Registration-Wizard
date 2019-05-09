@@ -81,16 +81,16 @@ $("#regform").validate({
             var elid = $element.attr('id');
             var $pic = $("#" + elid + ".glyphicon");
             $pic.hide();
-            $element.tooltip("destroy");
+            $pic.tooltip("destroy");
         });
 
         $.each(errorList, function (index, error) {
             var $element = $(error.element);
-            $element.tooltip("destroy");
             var elid = $element.attr('id');
             var $pic = $("#" + elid + ".glyphicon");
+            $pic.tooltip("destroy");
             $pic.show();
-            $element.tooltip({ title: error.message })
+            $pic.tooltip({ title: error.message })
         });
     }
 });

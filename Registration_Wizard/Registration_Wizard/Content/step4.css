@@ -1,6 +1,28 @@
-﻿body {
+﻿@font-face {
+    font-family: 'Varela';
+    src: url('Fonts/VarelaRound-Regular.otf');
+}
+
+body {
+    font-family: Varela;
     text-transform: uppercase;
     font-size: 13px;
+}
+
+.lab {
+    color: #666;
+}
+
+.orange-tooltip + .tooltip > .tooltip-inner {
+    background-color: #f2ae10;
+    position: absolute;
+    left: -100px;
+    min-width: 120px;
+    width: auto;
+}
+
+.orange-tooltip + .tooltip > .tooltip-arrow {
+    border-bottom-color: #f2ae10;
 }
 
 .registration-step4 {
@@ -44,8 +66,8 @@
     position: absolute;
     right: 0;
     top: 17px;
-    width: 342px;
-    padding: 10px 80px 30px 80px;
+    width: 325px;
+    padding: 10px 70px 30px 70px;
     background-image: url(Images/backgr.png);
     background-color: transparent;
     background-repeat:no-repeat;
@@ -96,7 +118,6 @@ input {
 
 #check{
     font-size: 11px;
-    padding-bottom: 110px;
     text-transform:none;
 }
 
@@ -125,4 +146,9 @@ input {
     position: absolute;
     bottom: 10px;
     right: 0;
+}
+
+.glyphicon-exclamation-sign {
+    cursor: help;
+    color: #FC6423;
 }

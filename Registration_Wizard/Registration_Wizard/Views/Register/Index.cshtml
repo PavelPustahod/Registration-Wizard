@@ -23,13 +23,13 @@
                 <div class="step1-form">
                     <table>
                         <tr>
-                            <td class="form-unit">
+                            <td class="form-unit" style="vertical-align:top">
                                 <table class="form-field">
                                     <tr>
                                         <td class="field-label">
                                             <span>
                                                 <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
-                                                <span>Salutation:</span>
+                                                <span class="lab">Salutation:</span>
                                             </span>
 
                                         </td>
@@ -47,7 +47,7 @@
                                                                 new SelectListItem{ Text = "Dr.", Value = "Dr."}})
                                                         </td>
                                                         <td class="icon">
-                                                            <span id="Salutation" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none"></span>
+                                                            <span id="Salutation" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style="display:none"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -57,13 +57,13 @@
                                 </table>
                             </td>
                             <td></td>
-                            <td class="form-unit-with-tip">
+                            <td class="form-unit-with-tip" style="vertical-align:top">
                                 <table class="form-field">
                                     <tr>
-                                        <td class="field-label">
+                                        <td class="field-label" style="padding-bottom:17px">
                                             <span>
                                                 <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
-                                                <span>Email:</span>
+                                                <span class="lab">Email:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -74,12 +74,12 @@
                                                             @Html.TextBoxFor(m => m.Email)
                                                         </td>
                                                         <td class="icon" align="left">
-                                                            <span id="Email" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none"></span>
+                                                            <span id="Email" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style="display:none"></span>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td class="email-tip">
-                                                            <span style="font-size:9px">Email will be your login</span>
+                                                            <span id="tip" style="font-size:9px">Email will be your login</span>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -96,7 +96,7 @@
                                         <td class="field-label">
                                             <span>
                                                 <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
-                                                <span>First name:</span>
+                                                <span class="lab">First name:</span>
                                             </span>
 
                                         </td>
@@ -108,7 +108,8 @@
                                                             @Html.TextBoxFor(m => m.Name)
                                                         </td>
                                                         <td class="icon">
-                                                            <span id="Name" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none;"></span>
+                                                            
+                                                            <span id="Name" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style="display:none;"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -124,7 +125,7 @@
                                         <td class="field-label">
                                             <span>
                                                 <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
-                                                <span>Confirm email:</span>
+                                                <span class="lab">Confirm email:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -135,7 +136,7 @@
                                                             @Html.TextBox("ConfirmEmail")
                                                         </td>
                                                         <td class="icon" align="left">
-                                                            <span id="ConfirmEmail" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none"></span>
+                                                            <span id="ConfirmEmail" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style="display:none"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -151,7 +152,7 @@
                                     <tr>
                                         <td class="field-label">
                                             <span>
-                                                <span>Middle name:</span>
+                                                <span class="lab">Middle name:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -162,7 +163,7 @@
                                                             @Html.TextBoxFor(m => m.MiddleName)
                                                         </td>
                                                         <td class="icon">
-                                                            <span id="MiddleName" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none;"></span>
+                                                            <span id="MiddleName" class="glyphicon glyphicon-exclamation-sign" style="display:none;"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -178,7 +179,7 @@
                                         <td class="field-label">
                                             <span>
                                                 <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
-                                                <span>Phone:</span>
+                                                <span class="lab">Phone:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -189,7 +190,7 @@
                                                             @Html.TextBoxFor(m => m.Phone)
                                                         </td>
                                                         <td class="icon" align="left">
-                                                            <span id="Phone" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none"></span>
+                                                            <span id="Phone" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style="display:none"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -207,7 +208,7 @@
                                         <td class="field-label">
                                             <span>
                                                 <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
-                                                <span>Last name:</span>
+                                                <span class="lab">Last name:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -218,7 +219,7 @@
                                                             @Html.TextBoxFor(m => m.LastName)
                                                         </td>
                                                         <td class="icon">
-                                                            <span id="LastName" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none;"></span>
+                                                            <span id="LastName" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style="display:none;"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -233,7 +234,7 @@
                                     <tr>
                                         <td class="field-label">
                                             <span>
-                                                <span>Fax:</span>
+                                                <span class="lab">Fax:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -259,7 +260,7 @@
                                         <td class="field-label">
                                             <span>
                                                 <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
-                                                <span>Company:</span>
+                                                <span class="lab">Company:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -270,7 +271,7 @@
                                                             @Html.TextBoxFor(m => m.Company)
                                                         </td>
                                                         <td class="icon">
-                                                            <span id="Company" class="glyphicon glyphicon-exclamation-sign" style="color:red; display: none"></span>
+                                                            <span id="Company" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style="display: none"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -285,7 +286,7 @@
                                     <tr>
                                         <td class="field-label">
                                             <span>
-                                                <span>Mobile:</span>
+                                                <span class="lab">Mobile:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -311,7 +312,7 @@
                                         <td class="field-label">
                                             <span>
                                                 <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
-                                                <span>Title:</span>
+                                                <span class="lab">Title:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -322,7 +323,7 @@
                                                             @Html.TextBoxFor(m => m.Title)
                                                         </td>
                                                         <td class="icon">
-                                                            <span id="Title" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none;"></span>
+                                                            <span id="Title" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style="display:none;"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -352,7 +353,7 @@
     <script type="text/javascript" src="~/Scripts/jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/bootstrap.js"></script>
-    <script src="~/Scripts/jquery-validate.bootstrap-tooltip.js"></script>
+    @*<script src="~/Scripts/jquery-validate.bootstrap-tooltip.js"></script>*@
     <script type="text/javascript" src="/Scripts/jquery.maskedinput.min.js"></script>
     <script type="text/javascript">
         $(function () {

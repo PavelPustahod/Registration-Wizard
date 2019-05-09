@@ -25,14 +25,14 @@
                 <div class="instructions">
                     <div>
                         Instructions:
-                        <span class="glyphicon glyphicon-exclamation-sign" style="color:red"></span>
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>
                     </div>
                     <div class="pas-instruction" style="color:gray">
                         <p>
                             Password must include:<br> - at least 8 characters<br> - an UPPER case letter<br> - a lower case letter<br> - a number <br>
                         </p>
                     </div>
-                    <div class="pas-instruction" style="margin-top:20px">
+                    <div class="pas-instruction" style="margin-top:20px; color: #666666">
                         <p>
                             Review the <br>
                             <a href="#"> Terms of Use </a> and <br><a href="#"> Privacy Policy </a> and indicate that you have read and accepted these terms.
@@ -48,7 +48,7 @@
                                         <td class="field-label">
                                             <span>
                                                 <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
-                                                <span>Password:</span>
+                                                <span class="lab">Password:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -59,7 +59,7 @@
                                                             @Html.PasswordFor(m => m.Password)
                                                         </td>
                                                         <td class="icon">
-                                                            <span id="Password" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none"></span>
+                                                            <span id="Password" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style="display:none; cursor:help;"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -76,7 +76,7 @@
                                         <td class="field-label">
                                             <span>
                                                 <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
-                                                <span>Confirm password:</span>
+                                                <span class="lab">Confirm password:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -87,7 +87,7 @@
                                                             @Html.Password("ConfirmPassword")
                                                         </td>
                                                         <td class="icon">
-                                                            <span id="ConfirmPassword" class="glyphicon glyphicon-exclamation-sign" style="color:red;display:none"></span>
+                                                            <span id="ConfirmPassword" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style="display:none;cursor:help"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -104,7 +104,7 @@
                                         <td class="field-label">
                                             <span>
                                                 <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
-                                                <span>Captcha:</span>
+                                                <span class="lab">Captcha:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -116,7 +116,7 @@
                                                             <p class="Error">@ViewBag.ErrMessage</p>
                                                         </td>
                                                         <td class="icon">
-                                                            <span class="glyphicon glyphicon-exclamation-sign" style="color:red; padding-top:130px; display: none"></span>
+                                                            <span id="CaptchaInputText" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style="display:none;cursor:help;padding-top:120px;"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -135,8 +135,11 @@
                                             <div class="field-with-icon">
                                                 <table>
                                                     <tr>
-                                                        <td class="field" id="check">
-                                                            <input type="checkbox" name="Accept" id="accept" value="3"> 	I have read and accept the terms of use<Br>
+                                                        <td class="field" id="check" style="color:#666666;">
+                                                            <input type="checkbox" name="Accept" id="accept" value="3"> 	I've read and accept the terms of use<Br>
+                                                        </td>
+                                                        <td class="icon">
+                                                            <span id="accept" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style="display:none;cursor:help"></span>
                                                         </td>
                                                     </tr>
                                                 </table>

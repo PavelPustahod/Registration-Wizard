@@ -12,6 +12,9 @@ $("#regform").validate({
             required: true,
             equalTo: "#Password"
         },
+        CaptchaInputText: {
+            required: true
+        },
         Accept: {
             required: true
         }
@@ -25,6 +28,9 @@ $("#regform").validate({
             required: "Required pasword confirmation",
             equalTo: "Confirmation is not equal to password"
         },
+        CaptchaInputText: {
+            required: "Captcha required"
+        },
         Accept: {
             required: "Please confirm that you've agreed with terms of use"
         }
@@ -35,16 +41,16 @@ $("#regform").validate({
             var elid = $element.attr('id');
             var $pic = $("#" + elid + ".glyphicon");
             $pic.hide();
-            $element.tooltip("destroy");
+            $pic.tooltip("destroy");
         });
 
         $.each(errorList, function (index, error) {
             var $element = $(error.element);
-            $element.tooltip("destroy");
             var elid = $element.attr('id');
             var $pic = $("#" + elid + ".glyphicon");
+            $pic.tooltip("destroy");
             $pic.show();
-            $element.tooltip({ title: error.message })
-        });
+            $pic.tooltip({ title: error.message });
+        })
     }
 });

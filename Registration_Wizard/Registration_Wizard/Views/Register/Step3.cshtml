@@ -30,7 +30,7 @@
                                         <td class="field-label">
                                             <span>
                                                 <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
-                                                <span>Country:</span>
+                                                <span class="lab">Country:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -41,7 +41,7 @@
                                                             @Html.DropDownListFor(m => m.Country, new SelectList(""), new { @class = "country", @id = "country", Name = "country" })
                                                         </td>
                                                         <td class="icon">
-                                                            <span id="country" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none"></span>
+                                                            <span id="country" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style="display:none"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -57,7 +57,7 @@
                                     <tr>
                                         <td class="field-label">
                                             <span>
-                                                <span>Office name:</span>
+                                                <span class="lab">Office name:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -84,7 +84,7 @@
                                         <td class="field-label">
                                             <span>
                                                 <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
-                                                <span>Address:</span>
+                                                <span class="lab">Address:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -92,10 +92,10 @@
                                                 <table>
                                                     <tr>
                                                         <td class="field">
-                                                            @Html.TextAreaFor(m => m.Address)
+                                                            @Html.TextAreaFor(m => m.Address, new { @class = "Address" })
                                                         </td>
                                                         <td class="icon">
-                                                            <span id="Address" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none"></span>
+                                                            <span id="Address" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style="display:none"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -112,7 +112,7 @@
                                         <td class="field-label">
                                             <span>
                                                 <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
-                                                <span>Postal code:</span>
+                                                <span class="lab">Postal code:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -123,7 +123,7 @@
                                                             @Html.TextBoxFor(m => m.PostalCode)
                                                         </td>
                                                         <td class="icon">
-                                                            <span id="PostalCode" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none"></span>
+                                                            <span id="PostalCode" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style=" display:none"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -140,7 +140,7 @@
                                         <td class="field-label">
                                             <span>
                                                 <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
-                                                <span>City:</span>
+                                                <span class="lab">City:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -151,7 +151,7 @@
                                                             @Html.TextBoxFor(m => m.City)
                                                         </td>
                                                         <td class="icon">
-                                                            <span id="City" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none"></span>
+                                                            <span id="City" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style=" display:none"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
@@ -168,7 +168,7 @@
                                         <td class="field-label">
                                             <span>
                                                 <span class="glyphicon glyphicon-asterisk blue" title="Required"></span>
-                                                <span>State:</span>
+                                                <span class="lab">State:</span>
                                             </span>
                                         </td>
                                         <td>
@@ -179,7 +179,7 @@
                                                             @Html.DropDownListFor(m => m.State, new SelectList(""), new { @class = "state", @id = "state", Name = "state" })
                                                         </td>
                                                         <td class="icon">
-                                                            <span id="state" class="glyphicon glyphicon-exclamation-sign" style="color:red; display:none"></span>
+                                                            <span id="state" data-placement="bottom" class="glyphicon glyphicon-exclamation-sign orange-tooltip" style="display:none"></span>
                                                         </td>
                                                     </tr>
                                                 </table>
