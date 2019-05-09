@@ -4,7 +4,7 @@
 }
 
 .registration-step3 {
-    width: 900px;
+    width: 850px;
     height: 100vh;
     margin: 0 auto 0;
     position: relative;
@@ -13,7 +13,6 @@
 .step3-header {
     position: absolute;
     top: 40px;
-    margin-bottom: 15px;
     text-transform: uppercase;
 }
 
@@ -95,14 +94,13 @@ input {
     bottom: 100px;
     left: 0;
     right: 0;
-    height: 45px;
-    width: 820px;
     text-transform: uppercase;
 }
 
 #next {
     float: right;
     min-width: 135px;
+    text-transform: inherit;
 }
 
 #back {

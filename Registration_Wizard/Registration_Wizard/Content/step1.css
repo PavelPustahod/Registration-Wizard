@@ -4,12 +4,10 @@
 }
 
 .registration-step1 {
-    width: 900px;
-    height: 723px;
-
+    width: 850px;
+    height: 100vh;
     margin: 0 auto 0;
     position: relative;
-
 }
 
 .step1-form-container{
@@ -24,7 +22,9 @@ select{
 }
 
 .step1-header {
-    margin-top: 40px;
+    position: absolute;
+    top: 40px;
+    text-transform: uppercase;
 }
 
 .step1-label {
@@ -88,16 +88,16 @@ input{
 
 .step1-buttons {
     position: absolute;
-    top: 580px;
+    bottom: 100px;
     left: 0;
     right: 0;
-    height: 45px;
-    width: 820px;
+    text-transform: uppercase;
 }
 
 #next{
     float: right;
     min-width: 135px;
+    text-transform: inherit;
 }
 
 .footer{
